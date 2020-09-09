@@ -8,3 +8,5 @@ dockermgr install registry
 
 # install registry frontend
 dockermgr install registry-web
+
+rm -Rf "$APPDIR/$APPNAME"
