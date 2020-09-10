@@ -11,4 +11,4 @@ dockermgr install registry
 # install registry frontend
 dockermgr install registry-web
 
-sudo rm -Rf ".local/share/CasjaysDev/dockermgr/$APPNAME"
+rm -Rf "$HOME/.local/share/CasjaysDev/dockermgr/$APPNAME"
