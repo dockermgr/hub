@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+APPNAME="hub"
+
 # install portainer
 dockermgr install portainer
 
@@ -9,4 +11,4 @@ dockermgr install registry
 # install registry frontend
 dockermgr install registry-web
 
-rm -Rf "$APPDIR"
+rm -Rf "$HOMEDIR/$APPNAME"
