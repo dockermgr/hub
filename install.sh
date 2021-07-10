@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
 APPNAME="hub"
+DOCKER_HUB_URL=
 
 # install portainer
-dockermgr install portainer
+sudo dockermgr install portainer
 
 # install registry
-dockermgr install registry
+sudo dockermgr install registry
 
 # install registry frontend
-dockermgr install registry-web
+sudo dockermgr install registry-web
 
-rm -Rf "$HOME/.local/share/CasjaysDev/dockermgr/$APPNAME"
+sudo rm -Rf "$HOME/.local/share/CasjaysDev/dockermgr/$APPNAME"
