@@ -123,17 +123,17 @@ bash -c "$(curl -q -LSs https://github.com/dockermgr/registry/raw/main/install.s
 bash -c "$(curl -q -LSs https://github.com/dockermgr/registry-web/raw/main/install.sh)"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # run post install scripts
-run_postinst() {
-  dockermgr_run_post
-}
+# run_postinst() {
+dockermgr_run_post
+# }
 #
-execute "run_postinst" "Running post install scripts"
+# execute "run_postinst" "Running post install scripts"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # create version file
-dockermgr_install_version
+# dockermgr_install_version
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # run exit function
-run_exit
+run_exit &>/dev/null
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # End application
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
