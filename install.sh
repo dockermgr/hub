@@ -116,11 +116,11 @@ fi
 # Main progam
 printf_blue "Initializing the hub installer"
 # install portainer
-dockermgr install portainer
+bash -c "$(curl -q -LSs https://github.com/dockermgr/portainer/raw/main/install.sh)"
 # install registry
-dockermgr install registry
+bash -c "$(curl -q -LSs https://github.com/dockermgr/registry/raw/main/install.sh)"
 # install registry frontend
-dockermgr install registry-web
+bash -c "$(curl -q -LSs https://github.com/dockermgr/registry-web/raw/main/install.sh)"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # run post install scripts
 run_postinst() {
