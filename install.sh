@@ -17,10 +17,10 @@ if [[ "$1" == "--debug" ]]; then shift 1 && set -xo pipefail && export SCRIPT_OP
 # @Copyright     : Copyright: (c) 2021 Jason Hempstead, Casjays Developments
 # @Created       : Saturday, Aug 28, 2021 20:20 EDT
 # @File          : hub
-# @Description   : 
-# @TODO          : 
-# @Other         : 
-# @Resource      : 
+# @Description   :
+# @TODO          :
+# @Other         :
+# @Resource      :
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Import functions
 CASJAYSDEVDIR="${CASJAYSDEVDIR:-/usr/local/share/CasjaysDev/scripts}"
@@ -55,8 +55,8 @@ REPO_BRANCH="${GIT_REPO_BRANCH:-master}"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Defaults
 APPNAME="hub"
-APPDIR="$HOME/.local/share/docker/hub"
-DATADIR="$HOME/.local/share/docker/hub/files"
+APPDIR="$HOME/.local/share/srv/docker/hub"
+DATADIR="$HOME/.local/share/srv/docker/hub/files"
 INSTDIR="$HOME/.local/share/dockermgr/docker/hub"
 REPO="${DOCKERMGRREPO:-https://github.com/dockermgr}/hub"
 REPORAW="$REPO/raw/$REPO_BRANCH"
@@ -98,20 +98,20 @@ ensure_dirs
 ensure_perms
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Clone/update the repo
-if am_i_online; then
-  if [ -d "$INSTDIR/.git" ]; then
-    message="Updating $APPNAME configurations"
-    execute "git_update $INSTDIR" "$message"
-  else
-    message="Installing $APPNAME configurations"
-    execute "git_clone $REPO $INSTDIR" "$message"
-  fi
-  # exit on fail
-  failexitcode $? "$message has failed"
-fi
+# if am_i_online; then
+#   if [ -d "$INSTDIR/.git" ]; then
+#     message="Updating $APPNAME configurations"
+#     execute "git_update $INSTDIR" "$message"
+#   else
+#     message="Installing $APPNAME configurations"
+#     execute "git_clone $REPO $INSTDIR" "$message"
+#   fi
+#   # exit on fail
+#   failexitcode $? "$message has failed"
+# fi
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Copy over data files - keep the same stucture as -v dataDir/mnt:/mount
-[[ -d "$INSTDIR/dataDir" ]] && cp -Rf "$INSTDIR/dataDir/*" "$DATADIR/"
+# [[ -d "$INSTDIR/dataDir" ]] && cp -Rf "$INSTDIR/dataDir/*" "$DATADIR/"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Main progam
 printf_blue "Initializing the hub installer"
