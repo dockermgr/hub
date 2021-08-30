@@ -64,7 +64,9 @@ APPVERSION="$(__appversion "$REPORAW/version.txt")"
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Setup plugins
 HUB_URL=""
+NGINX_SERVER=""
 SERVER_HOST=""
+SERVER_LISTEN=""
 SERVER_PORT=""
 SERVER_PORT_INT=""
 SERVER_PORT_SSL=""
