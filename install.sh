@@ -74,9 +74,11 @@ SERVER_PORT_INT=""
 SERVER_PORT_SSL=""
 SERVER_PORT_SSL_INT=""
 SERVER_TIMEZONE=""
-SERVER_SSL=""
 SERVER_SSL_CRT=""
 SERVER_SSL_KEY=""
+[[ -f "$SERVER_SSL_CRT" ]] && [[ -f "$SERVER_SSL_KEY" ]] && SERVER_SSL="true"
+[[ -n "$SERVER_SSL" ]] || SERVER_SSL="${SERVER_SSL:-false}"
+
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 # Require a version higher than
 dockermgr_req_version "$APPVERSION"
